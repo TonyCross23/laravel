@@ -1,8 +1,9 @@
 <?php
 
-use GuzzleHttp\Psr7\Request;
-use Illuminate\Http\Request as alias;
+
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -75,9 +76,20 @@ Route::get('caut' , function(){
 });
 
 
-Route::post('caut' , function(alias $request){
- $numOne = $request->num1;
- $numTwo = $request->num2;
- $result = $numOne + $numTwo ;
- dd($result);
+// // Route::post('caut' , function(Request $request){
+// //  $numOne = $request->num1;
+// //  $numTwo = $request->num2;
+// //  $result = $numOne + $numTwo ;
+// //  dd($result);
+// // })->name('cal');
+
+
+Route::post('caut' , function(Request $request){
+       $numOne = $request->num1;
+       $numTwo = $request->num2;
+       $result = $numOne + $numTwo ;
+       dd($result);
 })->name('cal');
+
+
+
