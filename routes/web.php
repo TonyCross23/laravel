@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\CustomerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Route;
@@ -183,3 +183,6 @@ Route::post('saveSession' , function(Request $request){
     // $data->address = $request->address;
     // dd($data);
 })->name('saveSession');
+
+
+Route::get('customerDetails',[CustomerController::class,'getDetails']);
